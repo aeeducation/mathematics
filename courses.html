@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anantrao Education | Skill-Based Mathematics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset and Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary-color: #1e3a8a; /* Deep Blue */
+            --secondary-color: #f97316; /* Vibrant Orange */
+            --bg-light: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: white;
+        }
+
+        /* Navigation */
+        header {
+            background-color: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: #ea580c;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 60px 5% 120px 5%; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .badges {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .hero-image-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            max-width: 550px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            object-fit: cover;
+        }
+
+        /* Course Cards Section */
+        .course-grid-section {
+            padding: 0 5%;
+            margin-top: -80px; 
+            position: relative;
+            z-index: 10;
+            margin-bottom: 80px;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .course-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: var(--bg-light); 
+        }
+
+        .course-card h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .course-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        /* Philosophy & Quality Education Section */
+        .comprehensive-learning {
+            padding: 40px 5% 80px 5%;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .content-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .lead-text {
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 50px;
+            line-height: 1.8;
+        }
+
+        .learning-pillar {
+            background: var(--bg-light);
+            padding: 35px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--secondary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .learning-pillar:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .learning-pillar h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .learning-pillar > p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: var(--text-light);
+        }
+
+        .learning-pillar ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .learning-pillar ul li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .learning-pillar ul li::before {
+            content: "✦";
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .learning-pillar ul li strong {
+            color: var(--primary-color);
+        }
+
+        .conclusion-text {
+            font-size: 1.15rem;
+            font-weight: 600;
+            text-align: center;
+            color: var(--primary-color);
+            margin-top: 50px;
+            padding: 35px;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-radius: 15px;
+            line-height: 1.7;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Call to Action */
+        /* Call to Action */
+.cta-section {
+    text-align: center;
+    padding: 80px 5%;
+    background-color: #00aadd; /* Light sky blue color */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+    background-size: 30px 30px; /* Creates the dotted pattern */
+    color: white;
+}
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 30px 5%;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-bottom: 80px;
+            }
+            .badges {
+                justify-content: center;
+            }
+            .hero-content, .hero-image-wrapper {
+                max-width: 100%;
+            }
+            .hero h1 { font-size: 2.5rem; }
+            .course-grid-section { margin-top: -30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"> <span>Anantrao Education</span></div>
+        <a href="https://wa.me/919739667787?text=Hi%2C%20I%20am%20interested%20in%20the%20Math%20Skills%20program." target="_blank" class="btn-primary">Talk to an Expert</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badges">
+                <div class="badge">Foundational Math Skills</div>
+                <div class="badge">Live Classes</div>
+                <div class="badge">Concept & Skill Based</div>
+            </div>
+            <h1>Master Mathematics with Confidence</h1>
+            <p>Go beyond the school curriculum. Master the foundational skills, fast calculation tricks, and real-life mathematical problem-solving required to excel in intermediate and advanced mathematics.</p>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="live1.png" alt="Children engaging in live math online class">
+        </div>
+    </section>
+
+    <section class="course-grid-section">
+        <div class="course-grid">
+            
+            <div class="course-card">
+                <img src="course1.png" alt="Live Mathematics Skills" class="course-img">
+                <h3>Live Mathematics Skills</h3>
+                <p>Transform how you interact with numbers through dynamic, live sessions and real-time numerical fluency.</p>
+                <a href="math_skill_live.html" class="btn-outline">Explore Now</a>
+            </div>
+
+            <div class="course-card">
+    <img src="course2.png" alt="6th to 10th Grade Mathematics" class="course-img">
+    <h3>6th to 10th Grade Math</h3>
+    <p>Comprehensive practice aligned directly with academic curricula to solidify school-level foundations.</p>
+    <a href="index.html?openPortal=true" class="btn-outline">Explore Now</a>
+</div>
+
+            <div class="course-card">
+                <img src="course3.png" alt="Competitive Exam Courses" class="course-img">
+                <h3>Competitive Exams</h3>
+                <p>Tailor-made aptitude and reasoning training for aspirants preparing for major competitive tests.</p>
+                <a href="aptitude_course.html" class="btn-outline">Explore Now</a>
+            </div>
+
+            <div class="course-card">
+                <img src="course4.png" alt="Competitive Exam Courses" class="course-img">
+                <h3>Competitive Exams</h3>
+                <p>Tailor-made aptitude and reasoning training for aspirants preparing for major competitive tests.</p>
+                <a href="aptitude_course.html" class="btn-outline">Explore Now</a>
+            </div>
+
+            <div class="course-card">
+                <img src="course5.png" alt="Competitive Exam Courses" class="course-img">
+                <h3>Competitive Exams</h3>
+                <p>Tailor-made aptitude and reasoning training for aspirants preparing for major competitive tests.</p>
+                <a href="aptitude_course.html" class="btn-outline">Explore Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="comprehensive-learning">
+        <h2 class="section-title">The Anantrao Education: Education Beyond the Ordinary</h2>
+        
+        <div class="content-container">
+            <p class="lead-text">
+                At Anantrao Education, we believe that true mathematical mastery is not about memorizing formulas just to pass an exam. It is about fundamentally transforming how a student views the world. We are committed to delivering high-quality, concept-driven education that shifts the focus from rote memorization to profound skill-building.
+            </p>
+
+            <div class="learning-pillar">
+                <h3>💡 Concept-Driven & Skill-Based Mastery</h3>
+                <p>We strip away superficial learning and focus entirely on the "why" and "how" behind every mathematical operation. Our methodology ensures that students don't just consume mathematics—they actively internalize it as a lifelong skill.</p>
+                <ul>
+                    <li><strong>Deep Foundational Roots:</strong> Building an unshakable base in core numerical concepts so students are never intimidated by complex equations.</li>
+                    <li><strong>Practical Skill Application:</strong> Transforming abstract theories into rapid, usable mathematical skills that build immense self-confidence.</li>
+                    <li><strong>Eliminating Rote Memorization:</strong> Focusing purely on logic-based understanding that stays with students long after they leave the classroom.</li>
+                </ul>
+            </div>
+
+            <div class="learning-pillar">
+                <h3>🧠 Elevating Cognitive & Thinking Levels</h3>
+                <p>Mathematics is the ultimate training ground for the brain. Our expertly crafted sessions and rigorous practice modules are designed to push cognitive boundaries, enhancing raw intelligence and structural thinking.</p>
+                <ul>
+                    <li><strong>Advanced Problem Solving:</strong> Training students to approach difficult, multi-step problems with calm, structured logic rather than frustration.</li>
+                    <li><strong>Pattern Recognition & Analytical Agility:</strong> Developing the powerful ability to instantly spot underlying patterns in numbers and real-world scenarios.</li>
+                    <li><strong>Mental Dexterity:</strong> Achieving lightning-fast calculation speeds through focused, dynamic training that sharpens the mind.</li>
+                </ul>
+            </div>
+
+            <div class="learning-pillar">
+                <h3>🚀 Learning That Goes Beyond the Curriculum</h3>
+                <p>Standard school syllabuses set the baseline; we aim much higher. We bridge the critical gap between basic academic requirements and the exceptional aptitude needed for lasting competitive success.</p>
+                <ul>
+                    <li><strong>Unrestricted Exploration:</strong> We dive into advanced topics, shortcuts, and conceptual frameworks that traditional textbooks often overlook.</li>
+                    <li><strong>The Competitive Edge:</strong> Instilling the strategic mindset, accuracy, and time-management skills required to conquer future competitive examinations.</li>
+                    <li><strong>Real-World Readiness:</strong> Equipping students with the mathematical and reasoning tools that directly apply to everyday logical and financial decisions.</li>
+                </ul>
+            </div>
+
+            <p class="conclusion-text">
+                Join us at Anantrao Education. We do more than just teach mathematics—we engineer mathematical minds, empowering the next generation to think sharper, calculate faster, and achieve extraordinary success in every walk of life.
+            </p>
+        </div>
+    </section>
+
+    <section class="cta-section" id="enroll">
+    <h2 style="font-size: 2.2rem; color: white; margin-bottom: 20px;">Ready to Transform Your Math Skills?</h2>
+    <p style="color: white; margin-bottom: 30px; font-size: 1.1rem;">Join our expert-led sessions and conquer mathematics without fear.</p>
+    <a href="https://wa.me/919739667787?text=Hi%2C%20I%20am%20interested%20in%20joining%20Anantrao%20Education." target="_blank" class="btn-primary" style="font-size: 1.2rem; padding: 15px 40px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">Register Your Spot Today</a>
+</section>
+
+    <footer>
+        <h3 style="margin-bottom: 10px; color: var(--secondary-color);">Anantrao Education</h3>
+        <p style="font-size: 0.9rem; color: #9ca3af;">Concept Based Learning.</p>
+        <div style="margin-top: 20px; font-size: 0.8rem; color: #6b7280;">
+            &copy; 2026 Anantrao Education. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

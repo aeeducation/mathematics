@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anantrao Education | Master Aptitude & Reasoning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset and Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif; /* Upgraded to Inter for a more professional corporate look */
+        }
+
+        :root {
+            --primary-color: #0f172a; /* Deeper Professional Navy */
+            --secondary-color: #2563eb; /* Trustworthy Corporate Blue */
+            --accent-color: #f59e0b; /* Attention-grabbing Amber for Offers */
+            --bg-light: #f8fafc;
+            --text-dark: #334155;
+            --text-light: #64748b;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+
+        /* Navigation */
+        header {
+            background-color: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: orange; /* Changed to make "Anantrao" orange */
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: orange; /* Changed to make "Education" orange */
+}
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.2);
+        }
+
+        .btn-accent:hover {
+            background-color: #d97706;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 80px 5% 120px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 1.15;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            margin-bottom: 35px;
+        }
+
+        .badges {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-image-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            object-fit: cover;
+        }
+
+        /* Course Info Banner */
+        .info-banner {
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 35px 5%;
+            margin: -70px 5% 60px 5%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .info-box {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .info-box h4 {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .info-box p {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 5% 80px 5%;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-light);
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: left;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Image + Text Split Section */
+        .skill-showcase {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            padding: 100px 5%;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .skill-image {
+            flex: 1;
+        }
+
+        .skill-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+
+        .skill-text {
+            flex: 1;
+        }
+
+        .skill-text h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .skill-text p {
+            color: #cbd5e1;
+            font-size: 1.15rem;
+            margin-bottom: 20px;
+        }
+
+        /* Details / Topics Section */
+        .curriculum {
+            background-color: var(--bg-light);
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .curriculum-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 50px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .curriculum-item {
+            background: white;
+            border: 1px solid #cbd5e1;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .curriculum-item:hover {
+            background: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        /* Call to Action */
+        .cta-section {
+            text-align: center;
+            padding: 100px 5%;
+            background: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #020617;
+            color: white;
+            text-align: center;
+            padding: 40px 5%;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 900px) {
+            .hero, .skill-showcase {
+                flex-direction: column;
+                text-align: center;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .badges {
+                justify-content: center;
+            }
+            .hero-content, .hero-image-wrapper {
+                max-width: 100%;
+            }
+            .hero h1 { font-size: 2.5rem; }
+            .info-banner { flex-direction: column; margin-top: -40px; }
+            .skill-text { order: -1; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Anantrao <span>Education</span></div>
+        <div class="btn-group">
+            <a href="#enroll" class="btn-primary">Buy Course (in English)</a>
+            <a href="#enroll" class="btn-accent">Buy Course (in Kannada)</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badges">
+                <div class="badge">Special Free Access Offer</div>
+                <div class="badge">UPSC | SSC | Banking | CET</div>
+            </div>
+            <h1>The Ultimate Foundation for Aptitude & Reasoning</h1>
+            <p>You cannot master intermediate and advanced mathematics without a rock-solid grasp of the basics. Transform your analytical skills with our comprehensive, expertly recorded classes designed specifically to help you crack the toughest competitive exams.</p>
+            <div class="btn-group">
+                <a href="#enroll-english" class="btn-primary" style="font-size: 1.1rem; padding: 15px 30px;">Buy Course (in English)</a>
+                <a href="#enroll-kannada" class="btn-accent" style="font-size: 1.1rem; padding: 15px 30px;">Buy Course (in Kannada)</a>
+            </div>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="aptitude.png" alt="Student preparing for competitive exams">
+        </div>
+    </section>
+
+    <div class="info-banner">
+        <div class="info-box">
+            <h4>Format</h4>
+            <p>HD Recorded Classes</p>
+        </div>
+        <div class="info-box">
+            <h4>Syllabus</h4>
+            <p>45+ Topics Covered</p>
+        </div>
+        <div class="info-box">
+            <h4>Accessibility</h4>
+            <p>Lifetime Access</p>
+        </div>
+        <div class="info-box">
+            <h4>Special Offer</h4>
+            <p style="color: var(--accent-color);">Free Access Available</p>
+        </div>
+    </div>
+
+    <section class="features">
+        <h2 class="section-title">Why This Course is Essential</h2>
+        <p class="section-subtitle">We bridge the critical gap between basic mathematics and the advanced reasoning required for top-tier competitive exams.</p>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>The Missing Foundation</h3>
+                <p>Advanced aptitude is impossible to decode without a strong base. Our classes explicitly target the foundational logic that standard textbooks often gloss over, ensuring you truly understand the "why" behind every formula.</p>
+            </div>
+            <div class="card">
+                <h3>Built for Competitive Exams</h3>
+                <p>Perfectly structured for UPSC, SSC, Railway Exams, Banking Exams, CET, and TET. We focus purely on exam-oriented problem-solving techniques, cutting out the noise to save you valuable preparation time.</p>
+            </div>
+            <div class="card">
+                <h3>Unbeatable Lifetime Offer</h3>
+                <p>Take advantage of our ongoing special promotion! Buy our premium recorded aptitude and reasoning package today and unlock lifetime access—meaning you can review complex topics whenever you need them, absolutely free of recurring charges.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skill-showcase">
+        <div class="skill-image">
+            <img src="reasoning.png" alt="Complex analytical reasoning concepts explained simply">
+        </div>
+        <div class="skill-text">
+            <h2>Crystal Clear Explanations for 45+ Complex Topics</h2>
+            <p>
+                Forget the frustration of getting stuck on intermediate and advanced level questions. These recorded classes are meticulously crafted to walk you through every difficulty tier—from absolute basics to elite-level exam questions.
+            </p>
+            <p>
+                Learn at your own pace, on your own schedule. By improving your core mathematics and logical reasoning abilities, you will dramatically increase your calculation speed and accuracy in high-pressure exam environments.
+            </p>
+        </div>
+    </section>
+
+    <section class="curriculum">
+        <h2 class="section-title">Comprehensive Syllabus Coverage</h2>
+        <p class="section-subtitle">Master every crucial category required to score top percentile marks.</p>
+        
+        <div class="curriculum-list">
+            <div class="curriculum-item">Number Systems & Algebra</div>
+            <div class="curriculum-item">Time, Speed & Distance</div>
+            <div class="curriculum-item">Data Interpretation (DI)</div>
+            <div class="curriculum-item">Syllogisms & Logic</div>
+            <div class="curriculum-item">Blood Relations</div>
+            <div class="curriculum-item">Seating Arrangements</div>
+            <div class="curriculum-item">Percentages & Ratios</div>
+            <div class="curriculum-item">Profit, Loss & Discount</div>
+            <div class="curriculum-item">Advanced Probability</div>
+            <div class="curriculum-item">Mental Math Shortcuts</div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="enroll">
+        <h2 style="font-size: 2.8rem; color: var(--primary-color); margin-bottom: 20px; font-weight: 800; letter-spacing: -1px;">Secure Your Lifetime Access Now</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px; font-size: 1.2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Don't let weak fundamentals cost you your dream job. Choose your preferred language medium below and start your preparation immediately.</p>
+        
+        <div class="btn-group" style="justify-content: center; gap: 20px;">
+            <a href="#" class="btn-primary" style="font-size: 1.2rem; padding: 18px 40px; width: 300px;">
+                Buy Aptitude & Reasoning<br><span style="font-size: 0.9rem; opacity: 0.9;">(in English Medium)</span>
+            </a>
+            <a href="#" class="btn-accent" style="font-size: 1.2rem; padding: 18px 40px; width: 300px;">
+                Buy Aptitude & Reasoning<br><span style="font-size: 0.9rem; opacity: 0.9;">(in Kannada Medium)</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <h3 style="margin-bottom: 10px; font-size: 1.5rem;">Anantrao Education</h3>
+        <p style="font-size: 1rem; color: #94a3b8; max-width: 400px; margin: 0 auto;">Building unshakeable foundations in mathematics and logical reasoning for competitive exam aspirants.</p>
+        <div style="margin-top: 30px; font-size: 0.85rem; color: #475569; border-top: 1px solid #1e293b; padding-top: 20px;">
+            &copy; 2026 Anantrao Education. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

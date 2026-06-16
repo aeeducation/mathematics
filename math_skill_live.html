@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anantrao Education | Advanced Math Skills</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset and Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary-color: #1e3a8a; /* Deep Blue */
+            --secondary-color: #f97316; /* Vibrant Orange */
+            --bg-light: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        header {
+            background-color: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: #ea580c;
+        }
+
+        /* Hero Section (Updated to Split Layout) */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 60px 5% 100px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .badges {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .hero-image-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            max-width: 550px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            object-fit: cover;
+        }
+
+        /* Course Info Banner */
+        .info-banner {
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 40px 5%;
+            margin: -60px 5% 60px 5%;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .info-box {
+            text-align: center;
+        }
+
+        .info-box h4 {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .info-box p {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 40px 5% 80px 5%;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Image + Text Split Section */
+        .skill-showcase {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 80px 5%;
+            background-color: var(--bg-light);
+        }
+
+        .skill-image {
+            flex: 1;
+        }
+
+        .skill-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .skill-text {
+            flex: 1;
+        }
+
+        .skill-text h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Details / Syllabus Section */
+        .curriculum {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .curriculum-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .curriculum-item {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            text-align: center;
+            padding: 80px 5%;
+            background: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 30px 5%;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 900px) {
+            .hero, .skill-showcase {
+                flex-direction: column;
+                text-align: center;
+            }
+            .badges {
+                justify-content: center;
+            }
+            .hero-content, .hero-image-wrapper {
+                max-width: 100%;
+            }
+            .hero h1 { font-size: 2.5rem; }
+            .info-banner { flex-direction: column; margin-top: -30px; }
+            .skill-text { order: -1; } /* Puts text above image on mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"> <span>Anantrao Education</span></div>
+        <a href="https://wa.me/919739667787?text=Hi%2C%20I%20am%20interested%20in%20the%20Math%20Skills%20program." target="_blank" class="btn-primary">Talk to an Expert</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badges">
+                <div class="badge">Grades 6th to 10th</div>
+                <div class="badge">Live Classes</div>
+                <div class="badge">Concept & Skill Based</div>
+            </div>
+            <h1>Unlock Your True Mathematical Potential</h1>
+            <p>Go beyond the school curriculum. Master the foundational skills, fast calculation tricks, and real-life mathematical problem-solving required to excel in intermediate and advanced mathematics.</p>
+            <a href="https://wa.me/919739667787?text=Hi%2C%20I%20am%20interested%20in%20the%20Math%20Skills%20program." target="_blank" class="btn-primary" style="font-size: 1.1rem; padding: 15px 30px;">Enroll Now for the 3-Month Program</a>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="livemath.png" alt="Children engaging in live math online class">
+        </div>
+    </section>
+
+    <div class="info-banner">
+        <div class="info-box">
+            <h4>Duration</h4>
+            <p>3 Months</p>
+        </div>
+        <div class="info-box">
+            <h4>Schedule</h4>
+            <p>Sat & Sun</p>
+        </div>
+        <div class="info-box">
+            <h4>Time</h4>
+            <p>1 Hour / Day</p>
+        </div>
+        <div class="info-box">
+            <h4>Format</h4>
+            <p>100% Live</p>
+        </div>
+    </div>
+
+    <section class="features">
+        <h2 class="section-title">Why Choose This Program?</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>The Missing Foundation</h3>
+                <p>Advanced mathematics is impossible without a solid grasp of the basics. We focus entirely on the fundamental concepts that students *must* know before moving to higher levels.</p>
+            </div>
+            <div class="card">
+                <h3>Beyond the Syllabus</h3>
+                <p>This is not just another school tuition. Our curriculum is not bound by standard textbooks. It is exclusively designed to develop raw thinking ability and deep mathematical skills.</p>
+            </div>
+            <div class="card">
+                <h3>Real-Life Applications</h3>
+                <p>Stop asking "Why am I learning this?" We teach exactly how mathematical concepts are used in everyday life, turning abstract numbers into practical problem-solving tools.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skill-showcase">
+        <div class="skill-image">
+            <img src="live2.png" alt="Kids doing fast mathematical calculations">
+        </div>
+        <div class="skill-text">
+            <h2>Develop Lightning Fast Mathematical Thinking</h2>
+            <p style="color: var(--text-light); font-size: 1.1rem; margin-bottom: 20px;">
+                Intermediate and advanced math cannot be understood without mastering the essentials. My live classes break down complex problems into simple, logical steps. 
+            </p>
+            <p style="color: var(--text-light); font-size: 1.1rem;">
+                Students learn exactly how to utilize math skills to calculate and solve questions in real-life scenarios, boosting both their confidence and their speed.
+            </p>
+        </div>
+    </section>
+
+    <section class="curriculum">
+        <h2 class="section-title" style="color: white; margin-bottom: 10px;">What You Will Learn</h2>
+        <p style="max-width: 600px; margin: 0 auto; color: #dbeafe;">Our intensive weekend program covers high-speed techniques and deep conceptual understanding.</p>
+        
+        <div class="curriculum-list">
+            <div class="curriculum-item">Fast Multiplication Tricks</div>
+            <div class="curriculum-item">High-Speed Subtraction</div>
+            <div class="curriculum-item">Mental Calculation Hacks</div>
+            <div class="curriculum-item">Real-world Problem Solving</div>
+            <div class="curriculum-item">Logical Thinking Ability</div>
+            <div class="curriculum-item">Advanced Foundation Building</div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="enroll">
+        <h2 style="font-size: 2.2rem; color: var(--primary-color); margin-bottom: 20px;">Ready to Transform Your Math Skills?</h2>
+        <p style="color: var(--text-light); margin-bottom: 30px; font-size: 1.1rem;">Join my live sessions every weekend and conquer mathematics without fear.</p>
+        <a href="https://wa.me/919739667787?text=Hi%2C%20I%20am%20interested%20in%20the%20Math%20Skills%20program." target="_blank" class="btn-primary" style="font-size: 1.2rem; padding: 15px 40px;">Register Your Spot Today</a>
+    </section>
+
+    <footer>
+        <h3 style="margin-bottom: 10px; color: var(--secondary-color);">Anantrao Education</h3>
+        <p style="font-size: 0.9rem; color: #9ca3af;">Skill-based mathematics teaching for Grades 6-10.</p>
+        <div style="margin-top: 20px; font-size: 0.8rem; color: #6b7280;">
+            &copy; 2026 Anantrao Education. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
